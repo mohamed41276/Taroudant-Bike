@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taroudant Bike</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMjgUOHaRX5cViJr0uWoAxNk-xHFWxo6LhWANO6Av2A2RQf1fJjAuO_i9KEfz-dnxb63iT_uOmKMowxuDL8Pd4QMl8AGMsd9EA62Nr6xsTFvyPhRwxOgXExacR4yLkg_g88Bel943HH5crWTiA1Vo1mdS_Eu3KmJBS6SklVY6C3o4YJjaQwGIgULAr/s320/(Ingl%C3%A9s).png" type="image/png">
+
+  <style>
+    :root {
+      --main-color: #ff8800;
+      --dark-bg: #111;
+      --light-bg: #222;
+      --green: #25d366;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: var(--dark-bg);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #1e1e1e;
+      padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      width: 140px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--main-color);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 1px px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: var(--main-color);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
+    .bikes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 20px;
+    }
+
+    .bike {
+      background: var(--light-bg);
+      padding: 1rem;
+      border-radius: 12px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 0 10px #000;
+      transition: transform 0.3s ease;
+    }
+
+    .bike:hover {
+      transform: scale(1.03);
+    }
+
+    .bike img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .bike h3 {
+      color: var(--main-color);
+      margin: 10px 0;
+    }
+
+    section#offers h2 {
+      text-align: center;
+      color: var(--main-color);
+      margin-top: 40px;
+    }
+
+    table {
+      width: 90%;
+      max-width: 700px;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: var(--light-bg);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    table th, table td {
+      border: 1px solid #444;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    table th {
+      background: var(--main-color);
+      color: #000;
+    }
+
+    .form-container {
+      background: #1c1c1c;
+      padding: 50px;
+      margin: 60px auto;
+      border-radius: 10px;
+      max-width: 500px;
+      border-top: 4px solid var(--main-color);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: var(--main-color);
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, button {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    button {
+      background-color: var(--green);
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #1ebe57;
+    }
+
+    .social-icons {
+      text-align: center;
+      margin: 2rem;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 1.8rem;
+      color: var(--main-color);
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        padding-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMjgUOHaRX5cViJr0uWoAxNk-xHFWxo6LhWANO6Av2A2RQf1fJjAuO_i9KEfz-dnxb63iT_uOmKMowxuDL8Pd4QMl8AGMsd9EA62Nr6xsTFvyPhRwxOgXExacR4yLkg_g88Bel943HH5crWTiA1Vo1mdS_Eu3KmJBS6SklVY6C3o4YJjaQwGIgULAr/s320/(Ingl%C3%A9s).png" alt="Taroudant Bike Logo" />
+  
+  <section class="hero" id="home">
+    <h1>Welcome to Taroudant Bike</h1>
+    <h5>Explore Taroudant with our reliable and affordable bike rentals.</h5>
+  </section>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#offers">Offers</a>
+      <a href="#booking">Booking</a>
+    </nav>
+  </header>
+
+  <section class="bikes">
+    <div class="bike">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3TfgaGVYUexKfdXfkTMAWwK6RTA9gJCCp-02u0tBypovSc_Z-RnDjEoW4ORbTxKJbiZVhF5yA-lxFgKR76zS4YlX5SiycSLsWNTHTxeVcpLDUDi1dAUCh-D0aCkqmlPIYYgCtJTEn9-IGZaxDuZ1_Z5od7yR4A3bZ0pIGi_7ueBERbO7qWAr42Ni0/s320/2.jpg" alt="Btwin Riverside 50">
+      <h3>Btwin Riverside 50</h3>
+    </div>
+    <div class="bike">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtjBA12mUXAG7r88RD-Hebmk1gNYYJHiFeVGvWWMbxvzLaPZRF1AGZzOyOb6n5koKJAEIyaGXNRXxhHJ8thfwO7nRc-qHZ0bCL5qC1SSYb8HJvigR6OcarPY0diOBKs0enDZrk1UtjSCQ_Ou2G7V1HtbFKw_TgCDniycPddZ9ETxiQD2eyh55XzwmL/s320/1.jpg" alt="Decathlon Elops 520">
+      <h3>Decathlon Elops 520</h3>
+    </div>
+  </section>
+
+  <section id="offers">
+    <h2>Rental Offers</h2>
+    <table>
+      <tr><th>Duration</th><th>Price (MAD)</th></tr>
+      <tr><td>1 hour</td><td>15 MAD</td></tr>
+      <tr><td>2 hours</td><td>20 MAD</td></tr>
+      <tr><td>3 hours</td><td>30 MAD</td></tr>
+      <tr><td>4 hours</td><td>40 MAD</td></tr>
+      <tr><td>Half Day (5–6h)</td><td>60 MAD</td></tr>
+      <tr><td>Full Day (9AM–7PM)</td><td>90 MAD</td></tr>
+    </table>
+  </section>
+
+  <section class="form-container" id="booking">
+  <h2>Book Your Bike</h2>
+  <form onsubmit="redirectToWhatsApp(event)">
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" required placeholder="e.g. John Doe" />
+
+    <label for="bike">Select Bike Type</label>
+    <select id="bike" required>
+      <option value="" disabled selected>Select bike type</option>
+      <option value="Btwin Riverside 50">Btwin Riverside 50</option>
+      <option value="Decathlon Elops 520">Decathlon Elops 520</option>
+    </select>
+
+    <label for="hours">Select Duration</label>
+    <select id="hours" required>
+      <option value="" disabled selected>Select duration</option>
+      <option value="1 hour">1 hour</option>
+      <option value="2 hours">2 hours</option>
+      <option value="3 hours">3 hours</option>
+      <option value="4 hours">4 hours</option>
+      <option value="5-6 hours">Half Day</option>
+      <option value="Full Day">Full Day</option>
+    </select>
+
+    <label for="date">Choose Date</label>
+    <input type="date" id="date" required />
+
+    <button type="submit">Book via WhatsApp</button>
+  </form>
+</section>
+
+  <section class="social-icons">
+    <h3>Follow us on:</h3>
+    <a href="https://www.instagram.com/mohamed.a.b.s/?__pwa=1"><i class="fab fa-instagram"></i></a>
+    <a href="https://web.facebook.com/ytbnsydmhmd"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.tiktok.com/@mohamedaitbensai1"><i class="fab fa-tiktok"></i></a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Taroudant Bike. All rights reserved.</p>
+  </footer>
+
+  <script>
+  window.onload = () => {
+    document.getElementById('date').min = new Date().toISOString().split('T')[0];
+  };
+
+  function redirectToWhatsApp(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('fullname').value.trim();
+    const bike = document.getElementById('bike').value;
+    const hours = document.getElementById('hours').value;
+    const date = document.getElementById('date').value;
+
+    if (!name || !bike || !hours || !date) {
+      alert('Please complete all fields.');
+      return;
+    }
+
+    const message = `Hello, I would like to book a bike.%0AName: ${encodeURIComponent(name)}%0ABike Type: ${encodeURIComponent(bike)}%0ADuration: ${encodeURIComponent(hours)}%0ADate: ${encodeURIComponent(date)}`;
+    const phone = '212636076918';
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  }
+</script>
+  </script>
+
+</body>
+</html>
